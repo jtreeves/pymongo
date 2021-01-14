@@ -11,7 +11,7 @@ simone_obj = {
     'bio': simone_data.json().get('bio'),
     'location': simone_data.json().get('location'),
     'followers': simone_data.json().get('followers'),
-    'date': datetime.date.day
+    'date': datetime.date.today()
 }
 
 jenny_obj = {
@@ -20,7 +20,7 @@ jenny_obj = {
     'bio': jenny_data.json().get('bio'),
     'location': jenny_data.json().get('location'),
     'followers': jenny_data.json().get('followers'),
-    'date': datetime.date.day
+    'date': datetime.date.today()
 }
 
 jeremy_obj = {
@@ -29,7 +29,7 @@ jeremy_obj = {
     'bio': jeremy_data.json().get('bio'),
     'location': jeremy_data.json().get('location'),
     'followers': jeremy_data.json().get('followers'),
-    'date': datetime.date.day
+    'date': datetime.date.today()
 }
 
 print(simone_obj)
