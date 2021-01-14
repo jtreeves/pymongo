@@ -1,6 +1,11 @@
 from pymongo import MongoClient
 import requests, datetime, pprint
 
+client = MongoClient()
+db = client.github_users
+db.drop_collection = 'classmates'
+classmates = db.classmates
+
 simone_data = requests.get('https://api.github.com/users/sschneeberg')
 jenny_data = requests.get('https://api.github.com/users/ruvvet')
 jeremy_data = requests.get('https://api.github.com/users/jjuriz')
@@ -35,3 +40,8 @@ jeremy_obj = {
 print(simone_obj)
 print(jenny_obj)
 print(jeremy_obj)
+
+classmates.insert_many([simone_obj, jenny_obj, jeremy_obj])
+found_classmate = classmates.find_one({'id': simone_obj['id']})
+
+print(found_classmate)
